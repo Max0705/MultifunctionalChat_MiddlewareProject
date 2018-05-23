@@ -1,6 +1,7 @@
 package RightPanel;
 
 import Tools.ParentAvailablePanel;
+import Tools.GBC;
 import org.apache.log4j.Logger;
 
 import javax.swing.*;
