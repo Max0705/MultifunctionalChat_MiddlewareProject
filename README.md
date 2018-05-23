@@ -10,10 +10,14 @@ api实现翻译、地图
 2.界面上显示在线的所有人的和一个群聊
 3.点击人或群聊后跳转至此页面，可发消息，可选择接受到的消息的语言，可选择本地文件发送，可位置共享
 
-jms+activemq实现点对点聊天和群聊
+#jms+activemq实现点对点聊天和群聊
 示例代码：
 https://github.com/Max0705/JMSChat
 
-微信界面
+#微信界面
 示例代码：
 https://github.com/itsonglin/wechat_desktop
+
+#qq界面
+示例代码：
+http://www.zuidaima.com/share/1758390462106624.htm
