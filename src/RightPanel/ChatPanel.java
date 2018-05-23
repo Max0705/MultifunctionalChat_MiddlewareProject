@@ -1,7 +1,10 @@
 package RightPanel;
 
+import Frame.MainFrame;
 import Tools.ParentAvailablePanel;
 import Tools.GBC;
+import Tools.RCBorder;
+import Tools.Colors;
 import org.apache.log4j.Logger;
 
 import javax.swing.*;
@@ -60,7 +63,7 @@ public class ChatPanel extends ParentAvailablePanel
 
     private Queue<String> shareAttachmentUploadQueue = new ArrayDeque<>(MAX_SHARE_ATTACHMENT_UPLOAD_COUNT);
 
-
+    private JButton a;
     public ChatPanel(JPanel parent)
     {
 
@@ -79,15 +82,16 @@ public class ChatPanel extends ParentAvailablePanel
     }
 
     private void initComponents()
-{
-    messagePanel = new MessagePanel(this);
-    messagePanel.setBorder(new RCBorder(RCBorder.BOTTOM, Colors.LIGHT_GRAY));
-    //adapter = new MessageAdapter(messageItems, messagePanel.getMessageListView(), messageViewHolderCacheHelper);
-    messagePanel.getMessageListView().setAdapter(adapter);
+    {
 
-    messageEditorPanel = new MessageEditorPanel(this);
-    messageEditorPanel.setPreferredSize(new Dimension(MainFrame.DEFAULT_WIDTH, MainFrame.DEFAULT_WIDTH / 4));
-}
+        messagePanel = new MessagePanel(this);
+        messagePanel.setBorder(new RCBorder(RCBorder.BOTTOM, Colors.LIGHT_GRAY));
+        //adapter = new MessageAdapter(messageItems, messagePanel.getMessageListView(), messageViewHolderCacheHelper);
+        //messagePanel.getMessageListView().setAdapter(adapter);
+
+        messageEditorPanel = new MessageEditorPanel(this);
+        messageEditorPanel.setPreferredSize(new Dimension(MainFrame.DEFAULT_WIDTH, MainFrame.DEFAULT_WIDTH / 4));
+    }
 
 
     private void initView()
@@ -96,11 +100,9 @@ public class ChatPanel extends ParentAvailablePanel
         add(messagePanel, new GBC(0, 0).setFill(GBC.BOTH).setWeight(1, 4));
         add(messageEditorPanel, new GBC(0, 1).setFill(GBC.BOTH).setWeight(1, 1));
 
-        if (roomId == null)
-        {
-            messagePanel.setVisible(false);
-            messageEditorPanel.setVisible(false);
-        }
+
+        //messagePanel.setVisible(true);
+        //messageEditorPanel.setVisible(false);
     }
 
     public static ChatPanel getContext()

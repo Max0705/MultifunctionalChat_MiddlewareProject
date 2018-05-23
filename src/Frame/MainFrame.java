@@ -1,6 +1,7 @@
 package Frame;
 
 import LeftPanel.LeftPanel;
+import RightPanel.RightPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -17,7 +18,7 @@ public class MainFrame extends JFrame
     public int currentWindowHeight = DEFAULT_HEIGHT;
 
     private LeftPanel leftPanel;
-    //private RightPanel rightPanel;
+    private RightPanel rightPanel;
 
     private static MainFrame context;
     private Image normalTrayIcon; // 正常时的任务栏图标
@@ -53,7 +54,7 @@ public class MainFrame extends JFrame
         leftPanel = new LeftPanel();
         leftPanel.setPreferredSize(new Dimension(260, currentWindowHeight));
 
-        //rightPanel = new RightPanel();
+        rightPanel = new RightPanel();
     }
 
     private void initView()
@@ -65,7 +66,7 @@ public class MainFrame extends JFrame
 
 
         add(leftPanel, BorderLayout.WEST);
-        //add(rightPanel, BorderLayout.CENTER);
+        add(rightPanel, BorderLayout.CENTER);
 
         centerScreen();
     }
