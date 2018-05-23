@@ -1,5 +1,6 @@
-package Panel;
+package RightPanel;
 
+import Tools.Colors;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;

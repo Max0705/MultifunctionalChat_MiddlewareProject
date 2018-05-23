@@ -1,6 +1,7 @@
-package Panel;
+package LeftPanel;
 
-
+import Tools.Colors;
+import Tools.GBC;
 import javax.swing.*;
 import java.awt.*;
 

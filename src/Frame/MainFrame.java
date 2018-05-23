@@ -1,10 +1,9 @@
 package Frame;
 
-import Panel.LeftPanel;
+import LeftPanel.LeftPanel;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.InputStream;
 
 /**
  * Created by song on 17-5-28.

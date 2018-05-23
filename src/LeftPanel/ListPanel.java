@@ -1,4 +1,6 @@
-package Panel;
+package LeftPanel;
+
+import Tools.ParentAvailablePanel;
 
 import javax.swing.*;
 import java.awt.*;

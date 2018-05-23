@@ -1,4 +1,4 @@
-package Panel;
+package Tools;
 
 import java.awt.*;
 
