@@ -10,11 +10,11 @@ import java.awt.*;
  */
 public class RightPanel extends JPanel
 {
-    private static RightPanel context;
+    //private static RightPanel context;
     //private TitlePanel titlePanel;
     //private RoomMembersPanel roomMembersPanel;
 
-    //private ChatPanel chatPanel;
+    private ChatPanel chatPanel;
     //private TipPanel tipPanel;
     //private UserInfoPanel userInfoPanel;
 
@@ -31,7 +31,7 @@ public class RightPanel extends JPanel
 
     public RightPanel()
     {
-        context = this;
+        //context = this;
         initComponents();
         initView();
 
@@ -44,7 +44,7 @@ public class RightPanel extends JPanel
         contentPanel.setLayout(cardLayout);
 
         //titlePanel = new TitlePanel(this);
-        //chatPanel = new ChatPanel(this);
+        chatPanel = new ChatPanel(this);
         //roomMembersPanel = new RoomMembersPanel(this);
         //tipPanel = new TipPanel(this);
         //userInfoPanel = new UserInfoPanel(this);
@@ -58,21 +58,23 @@ public class RightPanel extends JPanel
         //contentPanel.add(userInfoPanel, USER_INFO);
         //contentPanel.add(chatPanel, MESSAGE);
 
-        this.setBackground(Colors.FONT_WHITE);
+        this.setBackground(Colors.DARK);
         this.setLayout(new BorderLayout());
         //add(titlePanel, BorderLayout.NORTH);
         //add(roomMembersPanel, BorderLayout.EAST);
+
         add(contentPanel, BorderLayout.CENTER);
 
 
-        //add(chatPanel, BorderLayout.CENTER);
+        add(chatPanel, BorderLayout.CENTER);
+
         //add(tipPanel, BorderLayout.CENTER);
     }
 
-    public void showPanel(String who)
+    /*public void showPanel(String who)
     {
         cardLayout.show(contentPanel, who);
-    }
+    }*/
 
 
     /*public RoomMembersPanel getRoomMembersPanel()
@@ -88,7 +90,7 @@ public class RightPanel extends JPanel
     public UserInfoPanel getUserInfoPanel()
     {
         return userInfoPanel;
-    }*/
+    }
 
     public static RightPanel getContext()
     {
@@ -98,7 +100,7 @@ public class RightPanel extends JPanel
     public JPanel getContentPanel()
     {
         return contentPanel;
-    }
+    }*/
 
 
 }
