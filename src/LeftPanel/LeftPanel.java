@@ -26,7 +26,7 @@ public class LeftPanel extends JPanel
         searchPanel = new SearchPanel(this);
 
         mainOperationPanel = new TabOperationPanel(this);
-        //mainOperationPanel.setBackground(Color.blue);
+        mainOperationPanel.setBackground(Color.blue);
 
         listPanel = new ListPanel(this);
         listPanel.setBackground(Colors.DARK);

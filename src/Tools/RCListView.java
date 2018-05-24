@@ -1,6 +1,12 @@
 package Tools;
 
+import Tools.adapter.BaseAdapter;
+import Tools.adapter.HeaderViewHolder;
+//import com.rc.adapter.SelectUserItemViewHolder;
+import Tools.adapter.ViewHolder;
+
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -11,7 +17,7 @@ import java.util.List;
  */
 public class RCListView extends JScrollPane
 {
-    //private BaseAdapter adapter;
+    private BaseAdapter adapter;
     private JPanel contentPanel;
     private int vGap;
     private int hGap;
@@ -210,6 +216,45 @@ public class RCListView extends JScrollPane
         getVerticalScrollBar().setValue(1);
     }
 
+    public void fillComponents()
+    {
+        if (adapter == null)
+        {
+            return;
+        }
+
+        lastItemCount = adapter.getCount();
+        for (int i = 0; i < adapter.getCount(); i++)
+        {
+            int viewType = adapter.getItemViewType(i);
+            HeaderViewHolder headerViewHolder = adapter.onCreateHeaderViewHolder(viewType, i);
+            if (headerViewHolder != null)
+            {
+                adapter.onBindHeaderViewHolder(headerViewHolder, i);
+                contentPanel.add(headerViewHolder);
+                rectangleList.add(headerViewHolder.getBounds());
+            }
+
+            //long startTime = System.currentTimeMillis();
+            ViewHolder holder = adapter.onCreateViewHolder(viewType);
+            adapter.onBindViewHolder(holder, i);
+            contentPanel.add(holder);
+            //System.out.println("加载完成 ，用时 " + (System.currentTimeMillis() - startTime));
+        }
+    }
+
+    public BaseAdapter getAdapter()
+    {
+        return adapter;
+    }
+
+    public void setAdapter(BaseAdapter adapter)
+    {
+        this.adapter = adapter;
+
+        fillComponents();
+        //scrollToPosition(0);
+    }
 
     public void setContentPanelBackground(Color color)
     {
@@ -246,6 +291,71 @@ public class RCListView extends JScrollPane
     }
 
 
+    /**
+     * 重绘整个listView
+     */
+    public void notifyDataSetChanged(boolean keepSize)
+    {
+        if (keepSize)
+        {
+            if (lastItemCount == adapter.getCount())
+            {
+                System.out.println("数量相同");
+                // 保持原来内容面板的宽高，避免滚动条长度改变或可见状态改变时闪屏
+                contentPanel.setPreferredSize(new Dimension(contentPanel.getWidth(), contentPanel.getHeight()));
+            }
+        }
+
+        contentPanel.removeAll();
+        contentPanel.repaint();
+        fillComponents();
+        contentPanel.revalidate();
+
+    }
+
+    /**
+     * 重绘指定区间内的元素
+     *
+     * @param startPosition
+     * @param count
+     */
+    public void notifyItemRangeInserted(int startPosition, int count)
+    {
+        /*for (int i = startPosition; i < count; i++)
+        {
+            int viewType = adapter.getItemViewType(i);
+            ViewHolder holder = adapter.onCreateViewHolder(viewType);
+            adapter.onBindViewHolder(holder, i);
+            contentPanel.add(holder, startPosition);
+        }*/
+
+        for (int i = count - 1; i >= startPosition; i--)
+        {
+            int viewType = adapter.getItemViewType(i);
+            ViewHolder holder = adapter.onCreateViewHolder(viewType);
+            adapter.onBindViewHolder(holder, i);
+            contentPanel.add(holder, startPosition);
+        }
+    }
+
+    /**
+     * 重绘指定位置的元素
+     *
+     * @param position
+     */
+    public void notifyItemChanged(int position)
+    {
+        //contentPanel.remove(position);
+        //int viewType = adapter.getItemViewType(position);
+        //ViewHolder holder = adapter.onCreateViewHolder(viewType);
+        ViewHolder holder = (ViewHolder) getItem(position);
+        adapter.onBindViewHolder(holder, position);
+        //contentPanel.revalidate();
+        holder.repaint();
+
+        /*contentPanel.getComponent(position).setBackground(Color.red);
+        contentPanel.getComponent(position).revalidate();*/
+    }
 
     public Component getItem(int n)
     {
@@ -263,7 +373,16 @@ public class RCListView extends JScrollPane
         this.scrollToTopListener = listener;
     }
 
+    public void notifyItemInserted(int position, boolean end)
+    {
+        int viewType = adapter.getItemViewType(position);
+        ViewHolder holder = adapter.onCreateViewHolder(viewType);
+        adapter.onBindViewHolder(holder, position);
 
+        position = end ? -1 : position;
+        contentPanel.add(holder, position);
+        contentPanel.revalidate();
+    }
 
     public void notifyItemRemoved(int position)
     {
@@ -272,6 +391,24 @@ public class RCListView extends JScrollPane
         contentPanel.repaint();
     }
 
+    /**
+     * 获取列表中所有的ViewHolder项目，不包括HeaderViewHolder
+     * @return
+     */
+    public List<Component> getItems()
+    {
+        Component[] components = contentPanel.getComponents();
+        List<Component> viewHolders = new ArrayList<>();
+        for (Component com : components)
+        {
+            if (!(com instanceof HeaderViewHolder))
+            {
+                viewHolders.add(com);
+            }
+        }
+
+        return viewHolders;
+    }
 
     public interface ScrollToTopListener
     {

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+//搜索框
+
 public class SearchPanel extends ParentAvailablePanel
 {
     private static SearchPanel context;

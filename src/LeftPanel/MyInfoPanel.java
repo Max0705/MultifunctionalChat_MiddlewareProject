@@ -6,8 +6,8 @@ import Tools.GBC;
 //import com.rc.components.message.MainOperationPopupMenu;  创建群聊相关的类
 //import com.rc.frames.MainFrame;
 //import com.rc.frames.SystemConfigDialog;
-//import com.rc.listener.AbstractMouseListener;
-//import Tools.AvatarUtil;
+import Tools.AbstractMouseListener;
+import Tools.AvatarUtil;
 import Tools.FontUtil;
 import Tools.ParentAvailablePanel;
 
@@ -16,9 +16,8 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-/**
- * Created by song on 17-5-29.
- */
+//个人信息，包括名字和头像
+
 public class MyInfoPanel extends ParentAvailablePanel
 {
     private static MyInfoPanel context;
@@ -48,10 +47,10 @@ public class MyInfoPanel extends ParentAvailablePanel
 
         //GImage.setBorder(new SubtleSquareBorder(true));
         //currentUsername = currentUserService.findAll().get(0).getUsername();
-        currentUsername="Cuiheyu";
+        currentUsername="avatar";
         avatar = new JLabel();
-        avatar.setIcon(new ImageIcon(".images/avatar.jpg"));
-        //avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));
+        //avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
+        avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));
 
         avatar.setPreferredSize(new Dimension(50, 50));
         avatar.setCursor(new Cursor(Cursor.HAND_CURSOR));

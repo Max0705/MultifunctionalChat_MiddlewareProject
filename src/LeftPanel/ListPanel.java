@@ -11,9 +11,13 @@ import java.awt.*;
 public class ListPanel extends ParentAvailablePanel
 {
     private static ListPanel context;
+    //群聊信息
     //private RoomsPanel roomsPanel;
-    //private ContactsPanel contactsPanel;
+    //好友信息
+    private ContactsPanel contactsPanel;
+    //我的收藏信息
     //private CollectionsPanel collectionPanel;
+    //搜索信息
     //private SearchResultPanel searchResultPanel;
 
     public static final String CHAT = "CHAT";
@@ -41,7 +45,7 @@ public class ListPanel extends ParentAvailablePanel
 
         //roomsPanel = new RoomsPanel(this);
 
-        //contactsPanel = new ContactsPanel(this);
+        contactsPanel = new ContactsPanel(this);
 
         //collectionPanel = new CollectionsPanel(this);
 
@@ -53,7 +57,7 @@ public class ListPanel extends ParentAvailablePanel
     {
         this.setLayout(cardLayout);
         //add(roomsPanel, CHAT);
-        //add(contactsPanel, CONTACTS);
+        add(contactsPanel, CONTACTS);
         //add(collectionPanel, COLLECTIONS);
         //add(searchResultPanel, SEARCH);
     }
