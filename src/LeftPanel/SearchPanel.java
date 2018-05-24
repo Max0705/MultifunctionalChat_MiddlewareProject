@@ -1,11 +1,12 @@
 package LeftPanel;
 
-import com.rc.adapter.search.SearchResultItemsAdapter;
-import com.rc.app.Launcher;
+//import com.rc.adapter.search.SearchResultItemsAdapter;
+//import com.rc.app.Launcher;
 import Tools.Colors;
 import Tools.GBC;
-import com.rc.components.RCSearchTextField;
-import com.rc.utils.FontUtil;
+import Tools.RCSearchTextField;
+import Tools.ParentAvailablePanel;
+import Tools.FontUtil;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -16,20 +17,17 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by song on 17-5-29.
- */
+
 public class SearchPanel extends ParentAvailablePanel
 {
     private static SearchPanel context;
     private RCSearchTextField searchTextField;
-    private RoomService roomService = Launcher.roomService;
-    private boolean setSearchMessageOrFileListener = false;
+    //private RoomService roomService = Launcher.roomService;
+    //private boolean setSearchMessageOrFileListener = false;
 
-    private ContactsUserService contactsUserService = Launcher.contactsUserService;
-    private MessageService messageService = Launcher.messageService;
-    private FileAttachmentService fileAttachmentService = Launcher.fileAttachmentService;
-
+    //private ContactsUserService contactsUserService = Launcher.contactsUserService;
+    //private MessageService messageService = Launcher.messageService;
+    //private FileAttachmentService fileAttachmentService = Launcher.fileAttachmentService;
 
     public SearchPanel(JPanel parent)
     {
@@ -38,7 +36,7 @@ public class SearchPanel extends ParentAvailablePanel
 
         initComponent();
         initView();
-        setListeners();
+        //setListeners();
     }
 
 
@@ -65,6 +63,7 @@ public class SearchPanel extends ParentAvailablePanel
         return context;
     }
 
+    /*
     private void setListeners()
     {
         searchTextField.getDocument().addDocumentListener(new DocumentListener()
@@ -137,6 +136,7 @@ public class SearchPanel extends ParentAvailablePanel
         });
 
     }
+    */
 
     /**
      * 清空搜索文本
@@ -152,6 +152,7 @@ public class SearchPanel extends ParentAvailablePanel
      * @param key
      * @return
      */
+    /*
     private List<SearchResultItem> searchUserOrRoom(String key)
     {
         List<SearchResultItem> list = new ArrayList<>();
@@ -188,12 +189,14 @@ public class SearchPanel extends ParentAvailablePanel
 
         return list;
     }
+    */
 
     /**
      * 搜索并展示消息
      *
      * @param key
      */
+    /*
     private void searchAndListMessage(String key)
     {
         SearchResultPanel searchResultPanel = SearchResultPanel.getContext();
@@ -236,12 +239,14 @@ public class SearchPanel extends ParentAvailablePanel
         searchResultPanel.setKeyWord(key);
         searchResultPanel.notifyDataSetChanged(false);
     }
+    */
 
     /**
      * 搜索并展示文件
      *
      * @param key
      */
+    /*
     private void searchAndListFile(String key)
     {
         SearchResultPanel searchResultPanel = SearchResultPanel.getContext();
@@ -272,6 +277,7 @@ public class SearchPanel extends ParentAvailablePanel
         searchResultPanel.setData(searchResultItems);
         searchResultPanel.notifyDataSetChanged(false);
     }
+    */
 
     /**
      * 搜索房间，但不包含直接聊天
@@ -279,6 +285,7 @@ public class SearchPanel extends ParentAvailablePanel
      * @param key
      * @return
      */
+    /*
     private List<SearchResultItem> searchChannelAndGroup(String key)
     {
         List<Room> rooms = roomService.searchByName(key);
@@ -292,6 +299,8 @@ public class SearchPanel extends ParentAvailablePanel
         }
         return retList;
     }
+    */
+
 
     /**
      * 搜索通讯录
@@ -299,6 +308,7 @@ public class SearchPanel extends ParentAvailablePanel
      * @param key
      * @return
      */
+    /*
     private List<SearchResultItem> searchContacts(String key)
     {
         List<ContactsUser> contactsUsers = contactsUserService.searchByUsernameOrName(key, key);
@@ -311,5 +321,5 @@ public class SearchPanel extends ParentAvailablePanel
         }
         return retList;
     }
-
+    */
 }
