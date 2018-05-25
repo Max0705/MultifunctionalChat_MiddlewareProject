@@ -1,33 +1,33 @@
 package LeftPanel;
 
-import Tools.adapter.ContactsItemsAdapter;
+//import com.rc.adapter.ContactsItemsAdapter;
 //import com.rc.app.Launcher;
 import Tools.Colors;
 import Tools.GBC;
 import Tools.RCListView;
-import Tools.ParentAvailablePanel;
 //import com.rc.db.model.ContactsUser;
 //import com.rc.db.service.ContactsUserService;
 //import com.rc.db.service.CurrentUserService;
 import Tools.ContactsItem;
-import Tools.AvatarUtil;
+//import com.rc.utils.AvatarUtil;
 import org.apache.log4j.Logger;
 //import com.rc.tasks.HttpBytesGetTask;
 //import com.rc.tasks.HttpResponseListener;
 
+import Tools.ParentAvailablePanel;
 import javax.imageio.ImageIO;
-//import javax.imageio.stream.FileImageInputStream;
-//import javax.imageio.stream.ImageInputStream;
+import javax.imageio.stream.FileImageInputStream;
+import javax.imageio.stream.ImageInputStream;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-//import java.io.ByteArrayOutputStream;
-//import java.io.File;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
-//import java.io.InputStream;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
-//import java.util.List;
+import java.util.List;
 
 /**
  * Created by song on 17-5-30.
@@ -37,10 +37,12 @@ public class ContactsPanel extends ParentAvailablePanel
     private static ContactsPanel context;
 
     private RCListView contactsListView;
+    private List<ContactsItem> contactsItemList = new ArrayList<>();
+
     //private ContactsUserService contactsUserService = Launcher.contactsUserService;
     private Logger logger = Logger.getLogger(this.getClass());
     //private CurrentUserService currentUserService = Launcher.currentUserService;
-    private String currentUsername="avatar";
+    private String currentUsername;
 
     public ContactsPanel(JPanel parent)
     {
@@ -69,39 +71,36 @@ public class ContactsPanel extends ParentAvailablePanel
         add(contactsListView, new GBC(0, 0).setFill(GBC.BOTH).setWeight(1, 1));
     }
 
-    /*
+    //添加好友
+    //已修改
     private void initData()
     {
         contactsItemList.clear();
 
-        List<ContactsUser> contactsUsers = contactsUserService.findAll();
-        for (ContactsUser contactsUser : contactsUsers)
-        {
-            ContactsItem item = new ContactsItem(contactsUser.getUserId(),
-                    contactsUser.getUsername(), "d");
+        //List<ContactsUser> contactsUsers = contactsUserService.findAll()；
+        ContactsItem item = new ContactsItem("213",
+                    "崔贺宇", "d");
+        contactsItemList.add(item);
 
-            contactsItemList.add(item);
-        }
 
     }
-    */
+
 
     /*
     public void notifyDataSetChanged()
     {
-        initData();
-        ((ContactsItemsAdapter) contactsListView.getAdapter()).processData();
-        contactsListView.notifyDataSetChanged(false);
+        //initData();
+        //((ContactsItemsAdapter) contactsListView.getAdapter()).processData();
+        //contactsListView.notifyDataSetChanged(false);
 
         // 通讯录更新后，获取头像
-        getContactsUserAvatar();
+        //getContactsUserAvatar();
     }
-
+    */
     public static ContactsPanel getContext()
     {
         return context;
     }
-    */
 
     /**
      * 获取通讯录中用户的头像

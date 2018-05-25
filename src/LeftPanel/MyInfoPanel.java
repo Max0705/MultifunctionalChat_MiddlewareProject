@@ -7,7 +7,6 @@ import Tools.GBC;
 //import com.rc.frames.MainFrame;
 //import com.rc.frames.SystemConfigDialog;
 import Tools.AbstractMouseListener;
-import Tools.AvatarUtil;
 import Tools.FontUtil;
 import Tools.ParentAvailablePanel;
 
@@ -22,8 +21,11 @@ public class MyInfoPanel extends ParentAvailablePanel
 {
     private static MyInfoPanel context;
 
+    //头像
     private JLabel avatar;
+    //名字
     private JLabel username;
+    //设置
     //private JLabel menuIcon;
     //private CurrentUserService currentUserService = Launcher.currentUserService;
 
@@ -49,8 +51,8 @@ public class MyInfoPanel extends ParentAvailablePanel
         //currentUsername = currentUserService.findAll().get(0).getUsername();
         currentUsername="avatar";
         avatar = new JLabel();
-        //avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
-        avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));
+        avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
+        //avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));
 
         avatar.setPreferredSize(new Dimension(50, 50));
         avatar.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -63,7 +65,7 @@ public class MyInfoPanel extends ParentAvailablePanel
 
 
         //menuIcon = new JLabel();
-        //menuIcon.setIcon(new ImageIcon(getClass().getResource("/image/options.png")));
+        //menuIcon.setIcon(new ImageIcon(getClass().getResource("/images/options.png")));
         //menuIcon.setForeground(Colors.FONT_WHITE);
         //menuIcon.setCursor(new Cursor(Cursor.HAND_CURSOR));
 

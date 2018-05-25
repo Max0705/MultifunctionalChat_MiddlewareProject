@@ -1,9 +1,9 @@
 package Tools;
 
-import Tools.adapter.BaseAdapter;
-import Tools.adapter.HeaderViewHolder;
+//import Tools.adapter.BaseAdapter;
+//import Tools.adapter.HeaderViewHolder;
 //import com.rc.adapter.SelectUserItemViewHolder;
-import Tools.adapter.ViewHolder;
+//import Tools.adapter.ViewHolder;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class RCListView extends JScrollPane
 {
-    private BaseAdapter adapter;
+    //private BaseAdapter adapter;
     private JPanel contentPanel;
     private int vGap;
     private int hGap;
@@ -216,6 +216,8 @@ public class RCListView extends JScrollPane
         getVerticalScrollBar().setValue(1);
     }
 
+
+    /*
     public void fillComponents()
     {
         if (adapter == null)
@@ -242,7 +244,8 @@ public class RCListView extends JScrollPane
             //System.out.println("加载完成 ，用时 " + (System.currentTimeMillis() - startTime));
         }
     }
-
+    */
+    /*
     public BaseAdapter getAdapter()
     {
         return adapter;
@@ -255,6 +258,7 @@ public class RCListView extends JScrollPane
         fillComponents();
         //scrollToPosition(0);
     }
+    */
 
     public void setContentPanelBackground(Color color)
     {
@@ -294,6 +298,7 @@ public class RCListView extends JScrollPane
     /**
      * 重绘整个listView
      */
+    /*
     public void notifyDataSetChanged(boolean keepSize)
     {
         if (keepSize)
@@ -312,6 +317,7 @@ public class RCListView extends JScrollPane
         contentPanel.revalidate();
 
     }
+    */
 
     /**
      * 重绘指定区间内的元素
@@ -319,6 +325,7 @@ public class RCListView extends JScrollPane
      * @param startPosition
      * @param count
      */
+    /*
     public void notifyItemRangeInserted(int startPosition, int count)
     {
         /*for (int i = startPosition; i < count; i++)
@@ -328,7 +335,7 @@ public class RCListView extends JScrollPane
             adapter.onBindViewHolder(holder, i);
             contentPanel.add(holder, startPosition);
         }*/
-
+    /*
         for (int i = count - 1; i >= startPosition; i--)
         {
             int viewType = adapter.getItemViewType(i);
@@ -337,12 +344,14 @@ public class RCListView extends JScrollPane
             contentPanel.add(holder, startPosition);
         }
     }
+    */
 
     /**
      * 重绘指定位置的元素
      *
      * @param position
      */
+    /*
     public void notifyItemChanged(int position)
     {
         //contentPanel.remove(position);
@@ -354,8 +363,9 @@ public class RCListView extends JScrollPane
         holder.repaint();
 
         /*contentPanel.getComponent(position).setBackground(Color.red);
-        contentPanel.getComponent(position).revalidate();*/
+        contentPanel.getComponent(position).revalidate();
     }
+    */
 
     public Component getItem(int n)
     {
@@ -373,6 +383,7 @@ public class RCListView extends JScrollPane
         this.scrollToTopListener = listener;
     }
 
+    /*
     public void notifyItemInserted(int position, boolean end)
     {
         int viewType = adapter.getItemViewType(position);
@@ -383,6 +394,7 @@ public class RCListView extends JScrollPane
         contentPanel.add(holder, position);
         contentPanel.revalidate();
     }
+    */
 
     public void notifyItemRemoved(int position)
     {
@@ -395,6 +407,8 @@ public class RCListView extends JScrollPane
      * 获取列表中所有的ViewHolder项目，不包括HeaderViewHolder
      * @return
      */
+    /*
+
     public List<Component> getItems()
     {
         Component[] components = contentPanel.getComponents();
@@ -409,6 +423,7 @@ public class RCListView extends JScrollPane
 
         return viewHolders;
     }
+    */
 
     public interface ScrollToTopListener
     {

@@ -2,9 +2,13 @@ package LeftPanel;
 
 import Tools.Colors;
 import Tools.GBC;
+
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Created by song on 17-5-29.
+ */
 public class LeftPanel extends JPanel
 {
     private MyInfoPanel myInfoPanel;
@@ -19,6 +23,7 @@ public class LeftPanel extends JPanel
         initView();
     }
 
+    //初始组件
     private void initComponents()
     {
         myInfoPanel = new MyInfoPanel(this);
@@ -26,7 +31,7 @@ public class LeftPanel extends JPanel
         searchPanel = new SearchPanel(this);
 
         mainOperationPanel = new TabOperationPanel(this);
-        mainOperationPanel.setBackground(Color.blue);
+        //mainOperationPanel.setBackground(Color.blue); 源代码已注释
 
         listPanel = new ListPanel(this);
         listPanel.setBackground(Colors.DARK);
