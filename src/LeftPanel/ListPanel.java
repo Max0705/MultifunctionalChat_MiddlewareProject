@@ -63,7 +63,7 @@ public class ListPanel extends ParentAvailablePanel
     }
 
     /**
-     * 显示指定的card
+     * 显示指定的card，搜索相关
      *
      * @param who
      */

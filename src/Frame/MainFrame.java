@@ -17,7 +17,7 @@ public class MainFrame extends JFrame
     public int currentWindowWidth = DEFAULT_WIDTH;
     public int currentWindowHeight = DEFAULT_HEIGHT;
 
-    //private LeftPanel leftPanel;
+    private LeftPanel leftPanel;
     private RightPanel rightPanel;
 
     private static MainFrame context;
@@ -51,8 +51,8 @@ public class MainFrame extends JFrame
 
 
 
-        //leftPanel = new LeftPanel();
-        //leftPanel.setPreferredSize(new Dimension(260, currentWindowHeight));
+        leftPanel = new LeftPanel();
+        leftPanel.setPreferredSize(new Dimension(260, currentWindowHeight));
 
         rightPanel = new RightPanel();
     }
@@ -65,7 +65,7 @@ public class MainFrame extends JFrame
         setListeners();
 
 
-        //add(leftPanel, BorderLayout.WEST);
+        add(leftPanel, BorderLayout.WEST);
         add(rightPanel, BorderLayout.CENTER);
 
         centerScreen();

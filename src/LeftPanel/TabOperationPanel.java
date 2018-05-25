@@ -22,8 +22,8 @@ public class TabOperationPanel extends ParentAvailablePanel
     private ImageIcon chatIconNormal;
     private ImageIcon contactIconNormal;
     private ImageIcon contactIconActive;
-    private ImageIcon meIconNormal;
-    private ImageIcon meIconActive;
+    //private ImageIcon meIconNormal;
+    //private ImageIcon meIconActive;
 
     private LeftPanel parent;
 
@@ -99,24 +99,24 @@ public class TabOperationPanel extends ParentAvailablePanel
         @Override
         public void mouseClicked(MouseEvent e) {
             // 搜索框内容清空
-            //SearchPanel.getContext().clearSearchText();
+            SearchPanel.getContext().clearSearchText();
 
             if (e.getComponent() == chatLabel) {
                 chatLabel.setIcon(chatIconActive);
                 contactsLabel.setIcon(contactIconNormal);
                 //meLable.setIcon(meIconNormal);
-                parent.getListPanel().showPanel(ListPanel.CHAT);
+                //parent.getListPanel().showPanel(ListPanel.CHAT);
 
             } else if (e.getComponent() == contactsLabel) {
                 chatLabel.setIcon(chatIconNormal);
                 contactsLabel.setIcon(contactIconActive);
                 //meLable.setIcon(meIconNormal);
-                parent.getListPanel().showPanel(ListPanel.CONTACTS);
+                //parent.getListPanel().showPanel(ListPanel.CONTACTS);
             } else if (e.getComponent() == meLable) {
                 chatLabel.setIcon(chatIconNormal);
                 contactsLabel.setIcon(contactIconNormal);
                 //meLable.setIcon(meIconActive);
-                parent.getListPanel().showPanel(ListPanel.COLLECTIONS);
+                //parent.getListPanel().showPanel(ListPanel.COLLECTIONS);
             }
         }
 
