@@ -1,6 +1,6 @@
 package Tools;
 
-//import Tools.adapter.BaseAdapter;
+//import Tools.BaseAdapter;
 //import Tools.adapter.HeaderViewHolder;
 //import com.rc.adapter.SelectUserItemViewHolder;
 //import Tools.adapter.ViewHolder;
@@ -15,9 +15,10 @@ import java.util.List;
 /**
  * Created by song on 17-5-30.
  */
+//用于显示好友列表,滚动事件
 public class RCListView extends JScrollPane
 {
-    //private BaseAdapter adapter;
+    private BaseAdapter adapter;
     private JPanel contentPanel;
     private int vGap;
     private int hGap;
@@ -217,7 +218,7 @@ public class RCListView extends JScrollPane
     }
 
 
-    /*
+
     public void fillComponents()
     {
         if (adapter == null)
@@ -244,8 +245,8 @@ public class RCListView extends JScrollPane
             //System.out.println("加载完成 ，用时 " + (System.currentTimeMillis() - startTime));
         }
     }
-    */
-    /*
+
+
     public BaseAdapter getAdapter()
     {
         return adapter;
@@ -258,7 +259,7 @@ public class RCListView extends JScrollPane
         fillComponents();
         //scrollToPosition(0);
     }
-    */
+
 
     public void setContentPanelBackground(Color color)
     {

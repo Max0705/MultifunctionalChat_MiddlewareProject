@@ -38,7 +38,6 @@ public class ContactsPanel extends ParentAvailablePanel
 
     private RCListView contactsListView;
     private List<ContactsItem> contactsItemList = new ArrayList<>();
-
     //private ContactsUserService contactsUserService = Launcher.contactsUserService;
     private Logger logger = Logger.getLogger(this.getClass());
     //private CurrentUserService currentUserService = Launcher.currentUserService;
@@ -51,7 +50,7 @@ public class ContactsPanel extends ParentAvailablePanel
 
         initComponents();
         initView();
-        //initData();
+        initData();
         //contactsListView.setAdapter(new ContactsItemsAdapter(contactsItemList));
 
         // TODO: 从服务器获取通讯录后，调用下面方法更新UI
