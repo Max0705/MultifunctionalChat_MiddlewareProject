@@ -72,7 +72,7 @@ public class ChatPanel extends ParentAvailablePanel
 
     private Queue<String> shareAttachmentUploadQueue = new ArrayDeque<>(MAX_SHARE_ATTACHMENT_UPLOAD_COUNT);
 
-
+    private MessageRightTextViewHolder mm;
     public ChatPanel(JPanel parent)
     {
 
@@ -96,7 +96,7 @@ public class ChatPanel extends ParentAvailablePanel
         messagePanel.setBorder(new RCBorder(RCBorder.BOTTOM, Colors.LIGHT_GRAY));
         //adapter = new MessageAdapter(messageItems, messagePanel.getMessageListView(), messageViewHolderCacheHelper);
         //messagePanel.getMessageListView().setAdapter(adapter);
-
+        mm = new MessageRightTextViewHolder();
         messageEditorPanel = new MessageEditorPanel(this);
         messageEditorPanel.setPreferredSize(new Dimension(MainFrame.DEFAULT_WIDTH, MainFrame.DEFAULT_WIDTH / 4));
     }
@@ -105,6 +105,7 @@ public class ChatPanel extends ParentAvailablePanel
     private void initView()
     {
         this.setLayout(new GridBagLayout());
+        messagePanel.add(mm);
         add(messagePanel, new GBC(0, 0).setFill(GBC.BOTH).setWeight(1, 4));
         add(messageEditorPanel, new GBC(0, 1).setFill(GBC.BOTH).setWeight(1, 1));
 

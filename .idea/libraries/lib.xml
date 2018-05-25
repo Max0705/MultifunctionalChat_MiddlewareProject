@@ -11,6 +11,8 @@
       <root url="jar://$PROJECT_DIR$/lib/javax.servlet.jsp.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/javax.persistence.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/activemq-all-5.15.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/emoji-java-3.2.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/android.ninepatch.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
