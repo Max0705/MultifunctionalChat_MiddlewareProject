@@ -49,7 +49,7 @@ public class MyInfoPanel extends ParentAvailablePanel
 
         //GImage.setBorder(new SubtleSquareBorder(true));
         //currentUsername = currentUserService.findAll().get(0).getUsername();
-        currentUsername="avatar";
+        currentUsername="Cindy";
         avatar = new JLabel();
         avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
         //avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));

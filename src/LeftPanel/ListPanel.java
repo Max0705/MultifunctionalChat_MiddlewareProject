@@ -11,8 +11,8 @@ import java.awt.*;
 public class ListPanel extends ParentAvailablePanel
 {
     private static ListPanel context;
-    //群聊信息
-    //private RoomsPanel roomsPanel;
+    //聊天信息
+    private RoomsPanel roomsPanel;
     //好友信息
     private ContactsPanel contactsPanel;
     //我的收藏信息
@@ -43,7 +43,7 @@ public class ListPanel extends ParentAvailablePanel
     private void initComponents()
     {
 
-        //roomsPanel = new RoomsPanel(this);
+        roomsPanel = new RoomsPanel(this);
 
         contactsPanel = new ContactsPanel(this);
 
@@ -56,7 +56,7 @@ public class ListPanel extends ParentAvailablePanel
     private void initView()
     {
         this.setLayout(cardLayout);
-        //add(roomsPanel, CHAT);
+        add(roomsPanel, CHAT);
         add(contactsPanel, CONTACTS);
         //add(collectionPanel, COLLECTIONS);
         //add(searchResultPanel, SEARCH);

@@ -25,7 +25,7 @@ public class SearchPanel extends ParentAvailablePanel
     private static SearchPanel context;
     private RCSearchTextField searchTextField;
     //private RoomService roomService = Launcher.roomService;
-    //private boolean setSearchMessageOrFileListener = false;
+    private boolean setSearchMessageOrFileListener = false;
 
     //private ContactsUserService contactsUserService = Launcher.contactsUserService;
     //private MessageService messageService = Launcher.messageService;

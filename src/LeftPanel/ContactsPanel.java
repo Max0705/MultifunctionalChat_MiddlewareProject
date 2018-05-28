@@ -1,6 +1,6 @@
 package LeftPanel;
 
-//import com.rc.adapter.ContactsItemsAdapter;
+import Tools.ContactsItemsAdapter;
 //import com.rc.app.Launcher;
 import Tools.Colors;
 import Tools.GBC;
@@ -32,6 +32,7 @@ import java.util.List;
 /**
  * Created by song on 17-5-30.
  */
+//通讯录列表
 public class ContactsPanel extends ParentAvailablePanel
 {
     private static ContactsPanel context;
@@ -51,7 +52,7 @@ public class ContactsPanel extends ParentAvailablePanel
         initComponents();
         initView();
         initData();
-        //contactsListView.setAdapter(new ContactsItemsAdapter(contactsItemList));
+        contactsListView.setAdapter(new ContactsItemsAdapter(contactsItemList));
 
         // TODO: 从服务器获取通讯录后，调用下面方法更新UI
         //notifyDataSetChanged();
@@ -70,16 +71,26 @@ public class ContactsPanel extends ParentAvailablePanel
         add(contactsListView, new GBC(0, 0).setFill(GBC.BOTH).setWeight(1, 1));
     }
 
-    //添加好友
+    //添加通讯录中好友
     //已修改
     private void initData()
     {
         contactsItemList.clear();
 
         //List<ContactsUser> contactsUsers = contactsUserService.findAll()；
-        ContactsItem item = new ContactsItem("213",
+        ContactsItem item1 = new ContactsItem("1",
                     "崔贺宇", "d");
-        contactsItemList.add(item);
+        ContactsItem item2= new ContactsItem("2",
+                "崔少岩", "d");
+        ContactsItem item3 = new ContactsItem("3",
+                "董浩升", "d");
+        ContactsItem item4= new ContactsItem("4",
+                "李匡", "d");
+
+        contactsItemList.add(item1);
+        contactsItemList.add(item2);
+        contactsItemList.add(item3);
+        contactsItemList.add(item4);
 
 
     }
