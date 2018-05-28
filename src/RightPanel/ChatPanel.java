@@ -97,6 +97,7 @@ public class ChatPanel extends ParentAvailablePanel
         //adapter = new MessageAdapter(messageItems, messagePanel.getMessageListView(), messageViewHolderCacheHelper);
         //messagePanel.getMessageListView().setAdapter(adapter);
         mm = new MessageRightTextViewHolder();
+        mm.text.setText("hhh");
         messageEditorPanel = new MessageEditorPanel(this);
         messageEditorPanel.setPreferredSize(new Dimension(MainFrame.DEFAULT_WIDTH, MainFrame.DEFAULT_WIDTH / 4));
     }
