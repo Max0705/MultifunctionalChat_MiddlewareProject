@@ -50,12 +50,12 @@ public class MyInfoPanel extends ParentAvailablePanel
         //GImage.setBorder(new SubtleSquareBorder(true));
         //currentUsername = currentUserService.findAll().get(0).getUsername();
         currentUsername="Cindy";
-        avatar = new JLabel();
-        avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
+        //avatar = new JLabel();
+        //avatar.setIcon(new ImageIcon("/images/avatar.jpg"));
         //avatar.setIcon(new ImageIcon(AvatarUtil.createOrLoadUserAvatar(currentUsername).getScaledInstance(50,50,Image.SCALE_SMOOTH)));
 
-        avatar.setPreferredSize(new Dimension(50, 50));
-        avatar.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        //avatar.setPreferredSize(new Dimension(50, 50));
+        //avatar.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
 
         username = new JLabel();

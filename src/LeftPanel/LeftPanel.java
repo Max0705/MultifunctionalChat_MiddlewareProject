@@ -16,6 +16,7 @@ public class LeftPanel extends JPanel
     private TabOperationPanel mainOperationPanel;
     private ListPanel listPanel;
 
+
     public LeftPanel()
     {
 

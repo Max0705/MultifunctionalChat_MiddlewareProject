@@ -15,10 +15,10 @@ public class MainFrame extends JFrame
     public static int DEFAULT_HEIGHT = 650;
 
     public int currentWindowWidth = DEFAULT_WIDTH;
-    public int currentWindowHeight = DEFAULT_HEIGHT;
+    public int currentWindowHeight = DEFAULT_HEIGHT;    private RightPanel rightPanel;
 
     private LeftPanel leftPanel;
-    private RightPanel rightPanel;
+
 
     private static MainFrame context;
     private Image normalTrayIcon; // 正常时的任务栏图标
